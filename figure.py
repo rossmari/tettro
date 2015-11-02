@@ -6,14 +6,15 @@ class Figure:
     width = 0
     height = 0
 
+    name = 'Base'
+
     def value_at(self, row, col):
         return self.points[row][col]
 
     # describe figure
     def __init__(self):
-
-        self.height = self.points.len()
-        self.width = self.points[0].len()
+        self.height = len(self.points)
+        self.width = len(self.points[0])
 
     # move figure down to one row - as gravity do it
     def fall(self):
@@ -35,6 +36,7 @@ class Figure:
 
 class Pillar(Figure):
 
+    name = 'Pillar'
     points = [
         [1],
         [1],
@@ -47,9 +49,10 @@ class Pillar(Figure):
 
 class JFigure(Figure):
 
+    name = 'JFigure'
     points = [
-        [1], [1], [1],
-        [0], [0], [1],
+        [1, 1, 1],
+        [0, 0, 1],
     ]
 
     coordinates = {'row': 0, 'col': 3}
@@ -57,9 +60,10 @@ class JFigure(Figure):
 
 class LFigure(Figure):
 
+    name = 'LFigure'
     points = [
-        [1], [1], [1],
-        [1], [0], [0],
+        [1, 1, 1],
+        [1, 0, 0],
     ]
 
     coordinates = {'row': 0, 'col': 3}

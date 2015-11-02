@@ -11,5 +11,5 @@ class FigureGenerator:
     figures = [Pillar, JFigure, LFigure]
 
     def generate_figure(self):
-        index = randint(0, self.figures.len())
-        return self.figures[index]
+        index = randint(0, len(self.figures) - 1)
+        return self.figures[index]()
